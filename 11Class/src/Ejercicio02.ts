@@ -19,7 +19,6 @@ class Sistema{
                 const usuario = respuesta;
                 const contrasenia = answer;
                 this.evaluarUsuario(usuario, contrasenia);
-                this.cerrar();
             });
         });
     }
@@ -33,8 +32,10 @@ class Sistema{
             console.log(`
                 Inicio de sesion exitoso
                 Su rol es: ${estado}`);
+                this.cerrar();
         }else{
-            console.log("Usuario y contrasenia son incorrrecto")
+            console.log("Usuario y contrasenia son incorrrecto");
+            this.iniciar();
         }
     }
 
